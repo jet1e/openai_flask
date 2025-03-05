@@ -1,10 +1,8 @@
 <html>
     <head>
-        <title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Flask Chatbot</title>
-        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flask Chatbot</title>
 
         <style>
             body {
@@ -45,11 +43,18 @@
             }
         </style>
     </head>
-    <h1>Hello world!</h1>
-    <div id="chat-container">
-        <div id="responses"></div>
-        <input type="text" id="userInput" placeholder="Type your message here..." />
-        <button onclick="sendMessage()">Ask</button>
-    </div>
-    
+    <body>
+        <h1>Hello world!</h1>
+        <div id="chat-container">
+
+            {% if openai_response %}
+            <div id="responses">{{ openai_response }}</div>
+            {% endif %}
+
+            <form method="POST" action="/ask">
+                <input type="text" name="user_input" id="userInput" placeholder="Type your message here..." />
+                <button type="submit">Ask</button>
+            </form>
+        </div>
+    </body>
 </html>
