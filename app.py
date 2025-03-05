@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Retrieve the open AI key from .env
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
-openai = OpenAI(api_key=openai_api_key)
+
 openai = OpenAI(
     api_key = openai_api_key
 )
@@ -31,7 +31,7 @@ def ask():
     )
 
     print(response)
-    openai_response = response.choices[0].message['content']  # Get the response
+    openai_response = response.choices[0].message.content  # Get the response
 
     return render_template('index.html', user_message=user_message, openai_response=openai_response)  # Pass it to the frontend
 

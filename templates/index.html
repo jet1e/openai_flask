@@ -48,7 +48,7 @@
         <div id="chat-container">
 
             {% if openai_response %}
-            <div id="responses">{{ open }}</div>
+            <div id="responses">{{ openai_response }}</div>
             {% endif %}
 
             <form method="POST" action="/ask">
