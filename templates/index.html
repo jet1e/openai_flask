@@ -5,7 +5,51 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Flask Chatbot</title>
         </title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 50px;
+            }
+            #chat-container {
+                max-width: 600px;
+                margin: auto;
+                text-align: left;
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px #ddd;
+            }
+            #responses {
+                min-height: 200px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                overflow-y: auto;
+                max-height: 300px;
+            }
+            .message {
+                padding: 8px;
+                border-radius: 5px;
+                margin: 5px 0;
+            }
+            .user {
+                background-color: #cce5ff;
+                text-align: right;
+            }
+            .bot {
+                background-color: #d4edda;
+                text-align: left;
+            }
+        </style>
     </head>
     <h1>Hello world!</h1>
+    <div id="chat-container">
+        <div id="responses"></div>
+        <input type="text" id="userInput" placeholder="Type your message here..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
     
 </html>
