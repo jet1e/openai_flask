@@ -1,4 +1,4 @@
-# OpenAI Flask Chatbot - Basic implmentation
+# OpenAI Flask Chatbot - Basic implementation
 Flask app utilising OpenAI API to create a very basic implementation of a chatbot
 
 Goals:
